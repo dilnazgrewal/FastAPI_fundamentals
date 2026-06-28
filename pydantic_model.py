@@ -1,11 +1,11 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from fastapi import FastAPI
 
 class Student(BaseModel):
-    name: str
-    marks: float
+    name: str = Field(min_length = 5, max_length= 20)
+    marks: float = Field(ge = 0, le =100)
     urn: int
-    passed: bool
+    passed: bool = Field(default = True)
 
 students = [
     Student(name="Dilnaz", marks=92.5, urn=101, passed=True),
@@ -22,7 +22,9 @@ def list_students():
 @app.post("/record")
 def add_student(student:Student):
     students.append(student)
-    print(f"{student.urn} added successfully")
+    return {
+        "message": f"{student.urn} added successfully"
+        }
 
 
 
