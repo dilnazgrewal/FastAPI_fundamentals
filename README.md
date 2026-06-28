@@ -29,9 +29,9 @@ The goal of this repository is to:
 
 - [x] FastAPI Basics
 - [x] Creating API Endpoints
-- [ ] Path Parameters
-- [ ] Query Parameters
-- [ ] Request Bodies
+- [X] Path Parameters
+- [X] Query Parameters
+- [X] Request Bodies
 - [ ] Pydantic Models
 - [ ] Data Validation
 - [ ] Response Models
