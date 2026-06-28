@@ -32,7 +32,7 @@ The goal of this repository is to:
 - [X] Path Parameters
 - [X] Query Parameters
 - [X] Request Bodies
-- [ ] Pydantic Models
+- [x] Pydantic Models
 - [ ] Data Validation
 - [ ] Response Models
 - [ ] HTTP Status Codes
