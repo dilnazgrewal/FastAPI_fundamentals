@@ -33,9 +33,9 @@ The goal of this repository is to:
 - [X] Query Parameters
 - [X] Request Bodies
 - [x] Pydantic Models
-- [ ] Data Validation
-- [ ] Response Models
-- [ ] HTTP Status Codes
+- [x] Data Validation
+- [x] Response Models
+- [x] HTTP Status Codes
 - [ ] CRUD Operations
 - [ ] Dependency Injection
 - [ ] Asynchronous Programming
