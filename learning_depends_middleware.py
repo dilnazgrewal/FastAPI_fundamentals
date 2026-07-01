@@ -1,4 +1,5 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, Request
+import time
 
 app = FastAPI(title = "Finally understood Depends()")
 
@@ -44,7 +45,18 @@ def check_title(title: str):
         status_code=401, 
         detail= "Invalid title"
         )
-    
+
+@app.middleware("http")
+async def calculate_time(request: Request, call_next):
+    print("Started")
+    start_time = time.time()
+    process = await call_next(request)
+    finish_time = time.time()
+    processed_time = finish_time - start_time
+    print("Finished")
+    print(processed_time)
+    return process
+
 @app.put("/tasks/{title}")
 def update_task(task: dict = Depends(check_title)):
     task["done"] = True
